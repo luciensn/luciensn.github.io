@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="robots" content="noindex">
+	<style type="text/css">
+		html, body {
+			margin: 0px;
+			padding: 0px;
+			-webkit-text-size-adjust: none;
+			font-family: 'Avenir Black', 'Menlo', sans-serif;
+			font-weight: bold;
+			font-size: 16px;
+			line-height: 1.6;
+
+		}
+		body {
+			/*background: #ECF0F1;
+			/*background: #000;*/
+			/*color: #FF00BF;*/
+			color: #000;
+			/*padding: 16px;*/
+		}
+
+		.btn {
+		  background: #00ffff;
+		  background-image: -webkit-linear-gradient(top, #00ffff, #653bb3);
+		  background-image: -moz-linear-gradient(top, #00ffff, #653bb3);
+		  background-image: -ms-linear-gradient(top, #00ffff, #653bb3);
+		  background-image: -o-linear-gradient(top, #00ffff, #653bb3);
+		  background-image: linear-gradient(to bottom, #00ffff, #653bb3);
+		  -webkit-box-shadow: 2px 2px 2px #2b0247; /*#2b0247*/
+  		  -moz-box-shadow: 2px 2px 2px #2b0247;
+  		  box-shadow: 2px 2px 2px #2b0247;
+  		  font-family: 'Avenir Black', 'Menlo', sans-serif;
+		  font-weight: bold;
+		  color: #ffffff;
+		  font-size: 14px;
+		  padding: 6px 8px;
+		  text-decoration: none;
+		  border: none;
+		  /*border-bottom: 2px solid black;
+		  border-right: 2px solid black;*/
+		  margin-top: 16px;
+		  cursor: pointer;
+		}
+
+		.btn:active {
+		  text-decoration: none;
+		  -webkit-box-shadow: none;
+  		  -moz-box-shadow: none;
+  		  box-shadow: none;
+		  border: none;
+		}
+
+		.tron {
+			top: 0;
+			left: 0;
+			z-index: -1000;
+			position: absolute;
+			width: 600px;
+			height: 100px;
+
+			background-image:url('http://photoshopcafe.com/wp-content/uploads/2011/05/Screen-Shot-2014-08-03-at-12.32.16-PM.png');
+			background-repeat: no-repeat;
+		}
+
+		.widget {
+			background: none;
+		}
+
+	</style>
+
+	<script>
+
+	 var about = 0;
+
+	 function aboutClick() {
+
+	 	var newText = "";
+	 	about++;
+
+	 	switch(about) {
+		    case 0:
+		        break;
+		    case 1:
+		        newText = "He eats fried chicken too much.";
+		        break;
+		    case 2:
+		        newText = "He is generally satisfied with Top 40 radio.";
+		        break;
+		    case 3:
+		        newText = "He's out of shape.";
+		        break;
+		    case 4:
+		        newText = "He will play pickup basketball with you.";
+		        break;
+		    case 5:
+		        newText = "He will also golf with you.";
+		        break;
+		    case 6:
+		        newText = "He roots for Xavier.";
+		        break;
+		    case 7:
+		        newText = "He's probably asleep.";
+		        break;
+		    case 8:
+		        newText = "He listens to Drake a lot.";
+		        break;
+		    case 9:
+		        newText = "He goes alone to the movies sometimes.";
+		        break;
+		    case 10:
+		        newText = "He may forget to text you back right away.";
+		        break;
+		    case 11:
+		        newText = "He'll just have a Bud Light.";
+		        break;
+		    case 12:
+		        newText = "The next click is NSFW.";
+		        break;
+		    case 13:
+		        newText = "You dirty bird.";
+		        break;
+		    case 14:
+		        newText = "He roots for Duke.";
+		        break;
+		    case 15:
+		        newText = "His favorite sandwich is the Reuben.";
+		        break;
+		    case 16:
+		        newText = "He roots for the Cleveland Cavs.";
+		        break;
+		    case 17:
+		        newText = "He has been to Europe once.";
+		        break;
+		    case 18:
+		        newText = "Do you want to go to Taco Bell with him? He'll drive.";
+		        break;
+		    case 19:
+		        newText = "He roots for the Cincinnati Bengals.";
+		        break;
+		    case 20:
+		        newText = "He will never run a marathon.";
+		        break;
+	        case 21:
+	            newText = "He's a Scrum.org certified Professional Scrum Developer.";
+	            break;
+	        case 22:
+	            newText = "He roots for QPR.";
+	            break;
+	        case 23:
+	            newText = "He enjoys the movie Hitch, admittedly.";
+	            break;
+	        case 24:
+	            newText = "He watches a lot of stand-up on Netflix.";
+	            break;
+	        case 25:
+	            newText = "He might need glasses.";
+	            break;
+	        case 26:
+	            newText = "He is right handed.";
+	            break;
+	        case 27:
+	            newText = "He's very easygoing.";
+	            break;
+	        case 28:
+	            newText = "He wants to work with fun people and make fun stuff.";
+	            break;
+	        case 29:
+	            newText = "He thanks you.";
+	            document.getElementById('more').value = "Again!";
+	            break;
+	        case 30: // RESTART
+	        	newText = "Scott is from Cincinnati, Ohio.";
+	        	about = 0;
+	        	document.getElementById('more').value = "More!";
+	        	break;
+		    default:
+		    	return;
+		}
+		
+	 	document.getElementById('aboutMe').innerHTML = newText;
+	 }
+
+	</script>
+
+</head>
+<body>
+	<!--
+	<div class="tron"></div>
+	-->
+	<div class="widget">
+		<span id="aboutMe">Scott is from Cincinnati, Ohio.</span>
+		<br />
+		<input class="btn" id="more" type="button" value="More!" onClick="javascript:aboutClick();" />
+	</div>
+
+</body>
+</html>
