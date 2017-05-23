@@ -14,7 +14,7 @@
 	    body {
 	    	/*font-family: 'Menlo', 'Inconsolata', monospace, sans-serif;*/
 	    	font-family: Helvetica, sans-serif;
-	    	/*font-size: 14pt;*/
+	    	font-size: 10pt;
 
 		}
 		#centered {
@@ -45,6 +45,7 @@
 			padding: 4px;
 			font-size: 14pt;
 		}
+		/*
 		a:link, a:visited {
 			color: #00ff00;
 			text-decoration: none;
@@ -53,9 +54,9 @@
 			color: #ff0000;
 			text-decoration: none;
 		}
-
+		*/
 		img.portrait {
-			width: 100px;
+			width: 80px;
 		}
 		.main {
 			/*border: 1px solid #ccc;*/
@@ -63,16 +64,43 @@
 			padding: 16px;
 			max-width: 568px;
 		}
-		button {
-			cursor: pointer;
-
+		a.btn:link, a.btn:visited {
+		   	display:inline-block;
+			padding: 6px 18px;
+			border: none;
+			border-radius: 4px;
+			background-color: #848484;
+			box-shadow: 0 6px #424242;
+			color: #fff;
+			text-decoration: none;
+			font-size: 9pt;
+			/*font-weight: bold;*/
+			font-family: Courier;
+			margin: 6px 0px;
+			/*min-width: 175px;*/
 		}
-
+		a.btn:hover {
+			background-color: #6E6E6E;
+		}
+		a.btn:active {
+			background-color: #6E6E6E;
+			box-shadow: 0 4px #424242;
+			-webkit-transform: translate(2px);
+			-moz-transform: translate(2px);
+		 	transform: translateY(2px);
+		}
     </style>
 
     <script type="text/javascript">
+    	var e = false;
     	function showEmail() {
-    		document.getElementById('add').style.visibility = 'visible';
+    		if (!e) {
+    			document.getElementById('add').style.visibility = 'visible';
+    			e = true;
+    		} else {
+    			document.getElementById('add').style.visibility = 'hidden';
+    			e = false;
+    		}
     	}
     </script>
 </head>
@@ -92,9 +120,11 @@
 						📍<i>New York City</i>
 						<br />
 						<br />
-						<button onclick="javascript:showEmail();">Email</button>
-						<a href="http://cargocollective.com/luciensn" rel="nofollow"><button>Portfolio</button></a>
-						<a target="_blank" href="https://www.linkedin.com/in/scottlucien/" rel="nofollow"><button>LinkedIn</button></a>
+						<a class="btn" href="javascript:showEmail();" rel="nofollow">Email</a>
+						<br />
+						<a class="btn" href="http://cargocollective.com/luciensn" rel="nofollow">Portfolio</a>
+						<br />
+						<a class="btn" target="_blank" href="https://www.linkedin.com/in/scottlucien/" rel="nofollow">LinkedIn</a>
 						<br />
 						<br />
 						<span id="add" style="visibility:hidden;">scott.n.lucien@gmail.com</span>
