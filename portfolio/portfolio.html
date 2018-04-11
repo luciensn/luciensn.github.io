@@ -17,12 +17,99 @@
 	    	font-family: 'Open Sans', Helvetica, sans-serif;
 	    	font-size: 10pt;
 		}
+		#centered {
+			position: fixed;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			z-index: 3000;
+			text-align: center;
+		}
+		#main-table {
+			width: 100%;
+			height: 100%;
+			margin: 0px;
+			padding: 0px;
+		}
+		#main-table td {
+			margin: 0px;
+			width: 100%;
+			height: 100%;
+			vertical-align: center;
+			text-align: center;
+		}
+		span.label {
+			background: #000;
+			color: #fff;
+			padding: 4px;
+			font-size: 14pt;
+		}
+		/*
+		a:link, a:visited {
+			color: #00ff00;
+			text-decoration: none;
+		}
+		a:hover, a:active {
+			color: #ff0000;
+			text-decoration: none;
+		}
+		*/
+		img.portrait {
+			width: 80px;
+		}
+		.main {
+			/*border: 1px solid #ccc;*/
+			margin: 0 auto;
+			padding: 16px;
+			max-width: 568px;
+		}
+		a.btn:link, a.btn:visited {
+		   	display:inline-block;
+			padding: 6px 18px;
+			border: none;
+			border-radius: 4px;
+			background-color: #848484;
+			box-shadow: 0 6px #424242;
+			color: #fff;
+			text-decoration: none;
+			font-size: 14pt;
+			/*font-weight: bold;*/
+			font-family: 'Inconsolata', Courier, monospace;
+			margin: 6px 0px;
+			/*min-width: 175px;*/
+		}
+		a.btn:hover {
+			background-color: #6E6E6E;
+		}
+		a.btn:active {
+			background-color: #6E6E6E;
+			box-shadow: 0 4px #424242;
+			-webkit-transform: translate(2px);
+			-moz-transform: translate(2px);
+		 	transform: translateY(2px);
+		}
     </style>
 
 </head>
 <body>
 
-	<a href="http://cargocollective.com/luciensn" rel="nofollow">CLICK HERE</a>
+	<div id="centered">
+		<table id="main-table">
+			<tr>
+				<td>
+					<div class="main">
+						<img width="150px" src="arrow.gif" />
+						<br />
+						<a class="btn" href="http://cargocollective.com/luciensn" rel="nofollow">CLICK HERE</a>
+					</div>
+				</td>
+			</tr>
+		</table>
+	</div>
+
+
+	
 
 </body>
 </html>
