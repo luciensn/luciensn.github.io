@@ -166,6 +166,8 @@
 			font-size: 8pt;
 			padding: 4px 8px 4px 0px;
 			cursor: move;
+
+			touch-action: none;
 		}
 		.close-btn {
 			width: 10px;
@@ -271,6 +273,7 @@
 		}
 
 
+		/* TOUCH EVENTS */
 		function touchHandler(event) {
 		    var touches = event.changedTouches,
 		        first = touches[0],
@@ -289,10 +292,7 @@
 		                                  false, false, false, 0/*left*/, null);
 
 		    first.target.dispatchEvent(simulatedEvent);
-
-		    if (event.type == "touchmove") {
-		    	event.preventDefault();
-		    }
+		    event.preventDefault();
 		}
 
 		function init() {
