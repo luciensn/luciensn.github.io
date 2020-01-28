@@ -6,97 +6,42 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 
-	<title>SCOTT LUCIEN</title>
-	<meta name="description" content="New York City" />
+	<title id="title">scott lucien homepage</title>
+	<meta name="description" content="New York City!!!!!!!!!" />
     <link rel="shortcut icon nofollow" type="image/png" href="img/basketball.png">
 
 	<style type="text/css">
 		html {
 			/*font:100%/1.5 -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif;*/
-			font-family: 'Helvetica', sans-serif;
+			/*font-family: 'Helvetica', sans-serif;
 			font-weight: lighter;
 			font-size: 14pt;
-			letter-spacing: 1pt;
+			letter-spacing: 1pt;*/
+			font-family: 'Arial Black', 'Helvetica', sans-serif;
+			font-size: 14pt;
+			letter-spacing: 1pt
 			padding: 0;
 			margin: 0;
+			overflow: hidden;
 		}
 		body {
-			/*background: #f1f1f1;*/
-			color: #000;
-			padding: 0;
-			margin: 0;
-
-			padding: 8px;
-
-			/*background-color: #000;*/
-		}
-		main {
-			/*max-width: 38rem;*/
-			max-width: 70ch;
-			padding: 2vw;
-			/*padding: 2ch;*/
-			/*padding: 1.5rem;*/
-			/*margin: auto;*/
-		}
-
-		.gradient {
-
-			z-index: -1000;
-			position:fixed;
-			display:block;
-			top:0; bottom:0;
-			left:0; right:0;
-			width:100%; height:100%;
-			/*background-image: url('la2.gif');*/
-			/*background-image: url('nyc.gif');*/
-			background-size: 100%;
-			background-repeat:  no-repeat;
-			background-position: center;
-			/*opacity: .9;*/
-			background-color: #CEF6EC;
-			background-color: #070719;
-			background-color: #000;
-			/*background-image: linear-gradient(to bottom right, #BF00FF, #00FFBF);
-			opacity: 0.25;*/
-		}
-		.links {
-			width: 100%;
-			text-align: center;
 			/*border: 1px solid red;*/
+			background-color: #0000FF;
+			color: #FFFFFF;
+			margin: 0;
+			padding: 0;
 		}
 
-
-		a:link, a:visited {
-			/*color: #FF00FF;*/
-			color: #0000FF;
-			text-decoration: none;
+		img {
+			margin: 0;
+			padding: 0;
 		}
-		a:hover, a:active {
-			/*text-decoration: underline;*/
-		}
-
-		div.nav {
-			/*border: 1px solid #eee;*/
-			max-width: 70ch;
-		}
-		div.nav-float{ 
-			float: right;
-		}
-
-		div.proj {
-			background: #eee;
-			padding: 2vw;
-			margin: 2vw 0;
-		}
-		footer {
-			/*border: 1px solid #eee;*/
-			max-width: 70ch;
-			margin-top: 32px;
-		}
-
-		img.icon {
+		img.menu {
 			max-width: 24px;
 			opacity: 1;
+			float: left;
+			/*border: 1px solid green;*/
+			padding-bottom: 4px;
 		}
 		#add {
 			
@@ -128,6 +73,113 @@
 			/*height:100%;*/
 		}
 
+		.menu-bar {
+			/*border: 1px solid white;*/
+			padding: 16px 64px 8px 32px;
+
+			-webkit-user-select: none;
+            -moz-user-select: none;
+            -o-user-select: none;
+            -ms-user-select: none;
+            -khtml-user-select: none;     
+            user-select: none;
+		}
+		#clock {
+			float: right;
+		}
+
+		/* Dropdown Button */
+		.dropbtn {
+		  background-color: #0000FF;
+		  border: none;
+		  cursor: pointer;
+		}
+		/* The container <div> - needed to position the dropdown content */
+		.dropdown {
+		  position: relative;
+		  display: inline-block;
+		}
+		/* Dropdown Content (Hidden by Default) */
+		.dropdown-content {
+		  display: none;
+		  position: absolute;
+		  min-width: 225px;
+		  z-index: 1;
+
+		  /*bottom: 100%;*/
+		}
+		/* Links inside the dropdown */
+		.dropdown-content a {
+			border: 2px solid #FFFFFF;
+			background-color: #0000FF;
+		  	color: #FFFFFF;
+		  	padding: 4px 16px;
+		  	text-decoration: none;
+		  	display: block;
+		}
+		/* Change color of dropdown links on hover */
+		.dropdown-content a:hover {
+			background-color: #FFFFFF;
+			color: #0000FF;
+		}
+		/* Show the dropdown menu on hover */
+		.dropdown:hover .dropdown-content {
+			display: block;
+		}
+		/* Change the background color of the dropdown button when the dropdown content is shown */
+		.dropdown:hover .dropbtn {
+			background-color: #0000FF;
+		}
+
+		/* APP WINDOW CSS */
+		.app {		
+			position: fixed;	
+			font-family: 'Helvetica', sans-serif;
+			font-size: 11pt;
+			letter-spacing: 1pt;
+			box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+
+
+		}
+
+		.app-header {
+			/*border: 2px solid #FFFFFF;*/
+			background-color: #F2F2F2;
+			color: #000000;
+			font-size: 8pt;
+			padding: 4px 8px 4px 0px;
+			cursor: move;
+		}
+		.close-btn {
+			width: 10px;
+			height: 10px;
+			border-radius: 50%;
+			padding: 0;
+			margin: 4px 4px 4px 8px;
+			background-color: red;
+			border: none;
+			cursor: pointer;
+		}
+		#txt {
+			background-color: #FFFFFF;
+			color: #000000;
+		}
+		#txt .app-main {
+			padding: 8px;
+		}
+		#txt a:link, #txt a:visited {
+			/*color: #FF00FF;*/
+			color: #0000FF;
+			text-decoration: none;
+		}
+		#txt a:hover, #txt a:active {
+			/*text-decoration: underline;*/
+		}
+		#gif {
+			top: 150px;
+			left: 50px;
+		}
+
 	</style>
 
 	<script type="text/javascript">
@@ -141,36 +193,119 @@
     			e = false;
     		}
     	}
+
+    	function startTime() {
+		  var today = new Date();
+		  var h = today.getHours();
+		  if (h > 12) {h = h - 12}
+		  var m = today.getMinutes();
+		  var s = today.getSeconds();
+		  m = checkTime(m);
+		  s = checkTime(s);
+		  document.getElementById('clock').innerHTML = h + ":" + m + ":" + s;
+		  var t = setTimeout(startTime, 500);
+		}
+		function checkTime(i) {
+		  if (i < 10) {i = "0" + i};  // add zero in front of numbers < 10
+		  return i;
+		}
+
+		function deleteSite() {
+    		document.getElementById('title').innerHTML = 'void()';
+    		var video = document.getElementById('player');
+		    video.pause();
+		    video.currentTime = 0;
+    		document.getElementById('body').style.display = 'none';
+    	}
+
+    	function deleteApp(i) {
+    		i.parentElement.parentElement.style.display = 'none';
+    	}
+		
+		/* DRAG APP WINDOW */
+		function moveApp(obj) {
+
+			/* bring window to front */
+			var sID = obj.parentElement.id;
+			apps.forEach(function (arrayItem) {
+				var z = 0;
+			    if (arrayItem.localeCompare(sID) == 0) {
+			    	z = "1000";
+			    }
+			    document.getElementById(arrayItem).style.zIndex = z;
+			});
+
+			/* mousedown */
+			var sTop = parseInt(obj.parentElement.style.top);
+			var sLeft = parseInt(obj.parentElement.style.left);
+			var mX = window.event.clientX;
+			var mY = window.event.clientY;
+
+			/* mousemove */
+			document.onmousemove = function(e) {
+				var dX = window.event.clientX - mX;
+				var dY = window.event.clientY - mY;
+        		obj.parentElement.style.top = (sTop + dY) + "px";
+        		obj.parentElement.style.left = (sLeft + dX) + "px";
+   		  	}
+   		  	document.onmouseup = function() {
+   		  		document.onmousemove = null
+   		  	}
+		}
+
+		var apps = ["txt", "video"];
     </script>
 </head>
-<body>
-
-<!--
-	<div class="gradient"></div>
--->
-
-	<a href="javascript:showEmail();" rel="nofollow">EMAIL</a>
-	<br />
-	<a href="https://www.linkedin.com/in/scottlucien/" target="_blank" rel="nofollow">LINKEDIN</a>
-	<br />
-	<span id="add" style="visibility:hidden;">scott.n.lucien@gmail.com</span>
+<body id="body" onload="startTime()">
 
 
-<!--
-	<table>
-	 	<tr>
-	 		<td>
-				<a href="javascript:showEmail();" rel="nofollow">EMAIL</a>
-				<br />
-				<br />
-				<a href="https://www.linkedin.com/in/scottlucien/" target="_blank" rel="nofollow">LINKEDIN</a>
-				<br />
-				<br />
-				<span id="add" style="visibility:hidden;">scott.n.lucien@gmail.com</span>
-	 		</td>
-	 	</tr>
-	</table>
--->	
+	<div class="menu-bar">
+		<div class="dropdown">
+			<button class="dropbtn"><img class="menu" src="img/skull.png" /></button>
+		  	<div class="dropdown-content">
+		    	<a href="javascript:deleteSite();">delete website</a>
+		  	</div>
+		</div>
+		<div id="clock">
+			00:00:00
+		</div>
+	</div>
+
+
+	<div class="app" id="video" style="top:100px; left:380px;">
+		<div class="app-header" onmousedown="moveApp(this)">
+			<button class="close-btn" onclick="deleteApp(this)"></button>
+			kobe.mp4
+		</div>
+		<div class="app-main">
+			<!-- VIDEO EMBED -->
+			<video id="player" width="640" height="480" controls autoplay loop>
+				<source src="kobe.mp4" type="video/mp4">
+			</video>
+		</div>
+	</div>
+
+
+	<div class="app" id="txt" style="top:200px; left:200px; width:300px; height:350px;">
+		<div class="app-header" onmousedown="moveApp(this)">
+			<button class="close-btn" onclick="deleteApp(this)"></button>
+		</div>
+		<div class="app-main">
+			RIP MAMBA :(
+			<br />
+			<br />
+			<!--
+			<a href="#" target="_blank" rel="nofollow">vimeo</a>
+			<br />
+			-->
+			<a href="https://www.linkedin.com/in/scottlucien/" target="_blank" rel="nofollow">linkedin</a>
+			<br />
+			<a href="javascript:showEmail();" rel="nofollow">email</a>
+			<br />
+			<span id="add" style="visibility:hidden;">scott.n.lucien@gmail.com</span>
+		</div>
+	</div>
+
 
 
 </body>
