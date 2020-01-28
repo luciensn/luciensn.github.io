@@ -91,7 +91,7 @@
 		#clock {
 			font-weight: bold;
 			position: fixed;
-			top: 16px;
+			top: 24px;
 			right: 64px;
 			z-index: 1000;
 		}
@@ -203,10 +203,6 @@
 		#txt a:hover, #txt a:active {
 			/*text-decoration: underline;*/
 		}
-		#gif {
-			top: 150px;
-			left: 50px;
-		}
 
 	</style>
 
@@ -225,14 +221,15 @@
     	function startTime() {
 		  var today = new Date();
 		  var h = today.getHours();
+		  var meridiem = "AM";
 		  if (h == 0) {h = 12}
-		  if (h > 12) {h = h - 12}
+		  if (h > 12) {h = h - 12; meridiem = "PM";}
 		  var m = today.getMinutes();
 		  var s = today.getSeconds();
 		  m = checkTime(m);
 		  s = checkTime(s);
 		  /*document.getElementById('clock').innerHTML = h + ":" + m + ":" + s;*/
-		  document.getElementById('clock').innerHTML = h + ":" + m;
+		  document.getElementById('clock').innerHTML = h + ":" + m + " " + meridiem;
 		  var t = setTimeout(startTime, 500);
 		}
 		function checkTime(i) {
