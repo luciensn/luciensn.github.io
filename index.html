@@ -11,6 +11,10 @@
     <link rel="shortcut icon nofollow" type="image/png" href="img/basketball.png">
 
 	<style type="text/css">
+		html, body {
+		    height: 100%;
+		    overflow: hidden;
+		}
 		html {
 			/*font:100%/1.5 -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif;*/
 			/*font-family: 'Helvetica', sans-serif;
@@ -22,10 +26,8 @@
 			letter-spacing: 1pt
 			padding: 0;
 			margin: 0;
-			overflow: hidden;
 		}
 		body {
-			/*border: 1px solid red;*/
 			background-color: #0000FF;
 			color: #FFFFFF;
 			margin: 0;
@@ -37,11 +39,11 @@
 			padding: 0;
 		}
 		img.menu {
+			/*border: 1px solid green;*/
 			max-width: 24px;
 			opacity: 1;
 			float: left;
-			/*border: 1px solid green;*/
-			padding-bottom: 4px;
+			padding: 4px 0px;
 		}
 		#add {
 			
@@ -84,8 +86,13 @@
             -khtml-user-select: none;     
             user-select: none;
 		}
+
+
 		#clock {
-			float: right;
+			position: fixed;
+			top: 16px;
+			right: 32px;
+			z-index: 1000;
 		}
 
 		/* Dropdown Button */
@@ -96,8 +103,11 @@
 		}
 		/* The container <div> - needed to position the dropdown content */
 		.dropdown {
-		  position: relative;
+		  position: fixed;
+		  top: 16px;
+		  left: 32px;
 		  display: inline-block;
+		  z-index: 1000;
 		}
 		/* Dropdown Content (Hidden by Default) */
 		.dropdown-content {
@@ -105,7 +115,6 @@
 		  position: absolute;
 		  min-width: 225px;
 		  z-index: 1;
-
 		  /*bottom: 100%;*/
 		}
 		/* Links inside the dropdown */
@@ -132,14 +141,22 @@
 		}
 
 		/* APP WINDOW CSS */
+		.container {
+			/*border: 1px solid red;*/
+		    position: absolute;
+		    top: 0;
+		    bottom: 0;
+		    left: 0;
+		    right: 0;
+		    overflow: auto;
+		}
+
 		.app {		
-			position: fixed;	
+			position: absolute;
 			font-family: 'Helvetica', sans-serif;
 			font-size: 11pt;
 			letter-spacing: 1pt;
 			box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-
-
 		}
 
 		.app-header {
@@ -230,7 +247,7 @@
 			apps.forEach(function (arrayItem) {
 				var z = 0;
 			    if (arrayItem.localeCompare(sID) == 0) {
-			    	z = "1000";
+			    	z = "500";
 			    }
 			    document.getElementById(arrayItem).style.zIndex = z;
 			});
@@ -257,60 +274,62 @@
     </script>
 </head>
 <body id="body" onload="startTime()">
+	
+	<div class="container">
+
+		<div class="app" id="video" style="top:100px; left:380px;">
+			<div class="app-header" onmousedown="moveApp(this)">
+				<button class="close-btn" onclick="deleteApp(this)"></button>
+				kobe.mp4
+			</div>
+			<div class="app-main">
+				<!-- VIDEO EMBED -->
+				<video id="player" width="640" height="480" controls autoplay muted loop>
+					<source src="kobe.mp4" type="video/mp4">
+				</video>
+				<script>
+					/* AUTOPLAY */
+				    document.getElementById('player').play();
+				</script>
+			</div>
+		</div>
 
 
-	<div class="menu-bar">
-		<div class="dropdown">
-			<button class="dropbtn"><img class="menu" src="img/skull.png" /></button>
-		  	<div class="dropdown-content">
-		    	<a href="javascript:deleteSite();">delete website</a>
-		  	</div>
+		<div class="app" id="txt" style="top:200px; left:200px; width:300px; height:350px;">
+			<div class="app-header" onmousedown="moveApp(this)">
+				<button class="close-btn" onclick="deleteApp(this)"></button>
+			</div>
+			<div class="app-main">
+				RIP MAMBA :(
+				<br />
+				<br />
+				<!--
+				<a href="#" target="_blank" rel="nofollow">vimeo</a>
+				<br />
+				-->
+				<a href="https://www.linkedin.com/in/scottlucien/" target="_blank" rel="nofollow">linkedin</a>
+				<br />
+				<a href="javascript:showEmail();" rel="nofollow">email</a>
+				<br />
+				<span id="add" style="visibility:hidden;">scott.n.lucien@gmail.com</span>
+			</div>
 		</div>
-		<div id="clock">
-			00:00:00
-		</div>
+
+
 	</div>
 
 
-	<div class="app" id="video" style="top:100px; left:380px;">
-		<div class="app-header" onmousedown="moveApp(this)">
-			<button class="close-btn" onclick="deleteApp(this)"></button>
-			kobe.mp4
-		</div>
-		<div class="app-main">
-			<!-- VIDEO EMBED -->
-			<video id="player" width="640" height="480" controls autoplay muted loop>
-				<source src="kobe.mp4" type="video/mp4">
-			</video>
-			<script>
-				/* AUTOPLAY */
-			    document.getElementById('player').play();
-			</script>
-		</div>
+	<!-- MENU -->
+	<div class="dropdown">
+		<button class="dropbtn"><img class="menu" src="img/skull.png" /></button>
+	  	<div class="dropdown-content">
+	    	<a href="javascript:deleteSite();">delete website</a>
+	  	</div>
 	</div>
 
-
-	<div class="app" id="txt" style="top:200px; left:200px; width:300px; height:350px;">
-		<div class="app-header" onmousedown="moveApp(this)">
-			<button class="close-btn" onclick="deleteApp(this)"></button>
-		</div>
-		<div class="app-main">
-			RIP MAMBA :(
-			<br />
-			<br />
-			<!--
-			<a href="#" target="_blank" rel="nofollow">vimeo</a>
-			<br />
-			-->
-			<a href="https://www.linkedin.com/in/scottlucien/" target="_blank" rel="nofollow">linkedin</a>
-			<br />
-			<a href="javascript:showEmail();" rel="nofollow">email</a>
-			<br />
-			<span id="add" style="visibility:hidden;">scott.n.lucien@gmail.com</span>
-		</div>
+	<div id="clock">
+		00:00:00
 	</div>
-
-
 
 </body>
 </html>
