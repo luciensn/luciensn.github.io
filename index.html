@@ -179,6 +179,8 @@
 			background-color: red;
 			border: none;
 			cursor: pointer;
+
+			touch-action: auto;
 		}
 		#txt {
 			background-color: #FFFFFF;
@@ -293,7 +295,11 @@
 		                                  false, false, false, 0/*left*/, null);
 
 		    first.target.dispatchEvent(simulatedEvent);
-		    event.preventDefault();
+		   
+		   if (event.type == "touchmove") {
+		    	console.log('yep');
+		    	event.preventDefault();
+		    }
 		}
 
 		function init() {
