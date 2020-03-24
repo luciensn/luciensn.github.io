@@ -94,7 +94,7 @@
 
 		/* Dropdown Button */
 		.dropbtn {
-		  background-color: #0000FF;
+		  background: none;
 		  border: none;
 		  cursor: pointer;
 		}
@@ -104,16 +104,21 @@
 		  	position: fixed;
 		  	top: 16px;
 		  	left: 32px;
-		  	display: inline-block;
+		  	/*display: inline-block;*/
 		  	z-index: 1000;
 		}
 		/* Dropdown Content (Hidden by Default) */
 		.dropdown-content {
 		  display: none;
 		  position: absolute;
-		  min-width: 225px;
+		  /*min-width: 225px;*/
+		  width: max-content;
 		  z-index: 1;
 		  /*bottom: 100%;*/
+		}
+		/* Show the dropdown menu on hover */
+		.dropdown:hover .dropdown-content {
+			display: block;
 		}
 		/* Links inside the dropdown */
 		.dropdown-content a {
@@ -129,14 +134,7 @@
 			background-color: #FFFFFF;
 			color: #0000FF;
 		}
-		/* Show the dropdown menu on hover */
-		.dropdown:hover .dropdown-content {
-			display: block;
-		}
-		/* Change the background color of the dropdown button when the dropdown content is shown */
-		.dropdown:hover .dropbtn {
-			background-color: #0000FF;
-		}
+		
 
 		/* APP WINDOW CSS */
 		.container {
@@ -154,6 +152,8 @@
 			font-size: 11pt;
 			letter-spacing: 1pt;
 			box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+
+
 		}
 		.app-header {
 			/*border: 2px solid #FFFFFF;*/
@@ -175,29 +175,28 @@
 			padding: 0;
 			margin: 4px 4px 4px 8px;
 			background-color: red;
+			/*background-color: #FF00FF;*/
 			border: none;
 			cursor: pointer;
 
 			touch-action: auto;
 		}
-		/*
+		
 		.app-main {
-			border-radius: 0px 0px 4px 4px;
+			/*border-radius: 0px 0px 4px 4px;*/
+			overflow: scroll;
+
 		}
-		*/
 		#txt .app-main {
-			background-color: #FFFFFF;
+			background-color: #fafafa;
 			color: #000000;
 			padding: 8px;
-			height: 100%;
+			text-align: center;
 		}
 		#txt a:link, #txt a:visited {
 			/*color: #FF00FF;*/
 			color: #0000FF;
 			text-decoration: none;
-		}
-		#txt a:hover, #txt a:active {
-			/*text-decoration: underline;*/
 		}
 
 	</style>
@@ -236,8 +235,10 @@
 		function deleteSite() {
     		document.getElementById('title').innerHTML = 'void()';
     		var video = document.getElementById('player');
-		    video.pause();
-		    video.currentTime = 0;
+    		if (video != null) {
+		    	video.pause();
+		    	video.currentTime = 0;
+		    }
     		document.getElementById('body').style.display = 'none';
     	}
 
@@ -310,20 +311,55 @@
 		    document.addEventListener("touchcancel", touchHandler, true);    
 		}
 
-		var apps = ["txt", "video"];
+		var apps = ["txt"];
+					/*"video"];*/
     </script>
 </head>
 <body id="body" onload="init(); startTime();">
 	
 	<div class="container">
 
+
+		<div class="app" id="txt" style="top:150px; left:250px;">
+			<div class="app-header" onmousedown="moveApp(this)">
+				<button class="close-btn" onclick="deleteApp(this)"></button>
+				contact
+			</div>
+			<div class="app-main" style="width: 300px;" >
+				<br />
+				<img src="img/chair.gif" />
+				<br />
+				<br />
+
+				<a href="https://www.linkedin.com/in/scottlucien/" target="_blank" rel="nofollow">linkedin</a>
+				<br />
+				<a href="javascript:showEmail();" rel="nofollow">email</a>
+				<br />
+				<span id="add" style="visibility:hidden;">scott.n.lucien@gmail.com</span>
+				<br />
+			</div>
+		</div>
+
+<!--
+		<div class="app" id="gif" style="top:190px; left:720px;">
+			<div class="app-header" onmousedown="moveApp(this)">
+				<button class="close-btn" onclick="deleteApp(this)"></button>
+				
+			</div>
+			<div class="app-main">
+				<img src="img/chair.gif" />
+			</div>
+		</div>
+	-->
+
+
+	<!-- VIDEO PLAYER --
 		<div class="app" id="video" style="top:100px; left:300px;">
 			<div class="app-header" onmousedown="moveApp(this)">
 				<button class="close-btn" onclick="deleteApp(this)"></button>
 				kobe.mp4
 			</div>
 			<div class="app-main">
-				<!-- VIDEO EMBED -->
 				<video id="player" width="640" height="480" controls autoplay muted loop>
 					<source src="kobe.mp4" type="video/mp4">
 				</video>
@@ -333,27 +369,7 @@
 				</script>
 			</div>
 		</div>
-
-
-		<div class="app" id="txt" style="top:190px; left:130px; width:300px; height:330px;">
-			<div class="app-header" onmousedown="moveApp(this)">
-				<button class="close-btn" onclick="deleteApp(this)"></button>
-			</div>
-			<div class="app-main">
-				RIP MAMBA :(
-				<br />
-				<br />
-				<!--
-				<a href="#" target="_blank" rel="nofollow">vimeo</a>
-				<br />
-				-->
-				<a href="https://www.linkedin.com/in/scottlucien/" target="_blank" rel="nofollow">linkedin</a>
-				<br />
-				<a href="javascript:showEmail();" rel="nofollow">email</a>
-				<br />
-				<span id="add" style="visibility:hidden;">scott.n.lucien@gmail.com</span>
-			</div>
-		</div>
+	-->
 
 
 	</div>
@@ -363,7 +379,7 @@
 	<div class="dropdown">
 		<button class="dropbtn"><img class="menu" src="img/skull.png" /></button>
 	  	<div class="dropdown-content">
-	    	<a href="javascript:deleteSite();">delete website</a>
+		    <a href="javascript:deleteSite();">delete website</a>
 	  	</div>
 	</div>
 
